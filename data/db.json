@@ -1,0 +1,18 @@
+{
+  "data": [
+    {
+      "id": "1f992f95-3439-4ca4-8f97-54c7046e404b",
+      "url": "theverge.com",
+      "username": "ijo",
+      "password": "haha",
+      "created_at": "2017-05-26T09:06:13.197Z"
+    },
+    {
+      "id": "9b0ce83f-566e-4fb4-80ee-5430c238880d",
+      "url": "espn.com",
+      "username": "rich",
+      "password": "haha",
+      "created_at": "2017-05-26T09:10:32.773Z"
+    }
+  ]
+}
