@@ -2,6 +2,9 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 class SearchResult extends React.Component {
+  handleDelete(id) {
+    console.log('handleDelete ' + id)
+  }
 
   render() {
     return (
@@ -15,6 +18,7 @@ class SearchResult extends React.Component {
             <th>Password</th>
             <th>Created at</th>
             <th>Updated at</th>
+            <th>Actions</th>
           </tr>
           </thead>
           <tbody>
@@ -32,6 +36,7 @@ class SearchResult extends React.Component {
                 <td>{d.password}</td>
                 <td>{created_at}</td>
                 <td>{updated_at}</td>
+                <td><button onClick={() => {this.handleDelete(d.id)}}>Delete</button></td>
               </tr>
             )
           })}

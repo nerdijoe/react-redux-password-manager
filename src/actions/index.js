@@ -4,7 +4,8 @@ import {
   FETCH_DATA,
   INCREMENT_LAST_ID,
   ADD_PASSWORD,
-  SEARCH
+  SEARCH,
+  DELETE
 } from './constants'
 
 export const fetchData = (data) => {
@@ -71,5 +72,12 @@ export const search = (text) => {
   return {
     type: SEARCH,
     text
+  }
+}
+
+export const deletePassword = (id) => {
+  return {
+    type: DELETE,
+    id
   }
 }
