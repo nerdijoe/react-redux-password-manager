@@ -32,6 +32,19 @@ class PasswordForm extends React.Component {
     //check validation, if all true then proceed
 
     this.props.actionAddPassword(this.state)
+
+    const validationErrors = this.state.validationErrors
+    validationErrors.password_min_length = false
+    validationErrors.password_lower_case_count = false
+    validationErrors.password_upper_case_count = false
+    validationErrors.password_contain_number = false
+    validationErrors.password_contain_special_char = false
+    
+    this.setState({
+      url: '',
+      username: '',
+      password: ''
+    })
   }
 
   printMessage() {
