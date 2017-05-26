@@ -4,6 +4,8 @@ import { connect } from 'react-redux'
 import { actionFetchData } from '../actions'
 
 import PasswordForm from './PasswordForm'
+import SearchForm from './SearchForm'
+import SearchResult from './SearchResult'
 
 class Home extends React.Component {
 
@@ -13,21 +15,19 @@ class Home extends React.Component {
 
   }
 
+
+
   render() {
     return (
       <div>
+        <br/>
         Home
-
-        <PasswordForm on/>
-        <ul>
-        { this.props.data.map( d => {
-          return (
-            <li key={d.id}>
-              {d.url} - {d.username} - {d.password}
-            </li>
-          )
-        })}
-        </ul>
+        <br/><br/>
+        <PasswordForm />
+        <br/><br/>
+        <SearchForm />
+        <br/><br/>
+        <SearchResult />
 
       </div>
     )
