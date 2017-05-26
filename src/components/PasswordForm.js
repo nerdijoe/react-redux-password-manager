@@ -34,6 +34,38 @@ class PasswordForm extends React.Component {
     this.props.actionAddPassword(this.state)
   }
 
+  printMessage() {
+    let message = "Password Strength "
+    if(!this.state.validationErrors.password_min_length)
+      message += "[ ] Password length is more than 5 chars."
+    else
+      message += "[v] Password length is more than 5 chars."
+
+    if(!this.state.validationErrors.password_lower_case_count)
+      message += "[ ] Password contains one lower case letter"
+    else
+      message += "[v] Password contains one lower case letter"
+
+    if(!this.state.validationErrors.password_upper_case_count)
+      message += "[ ] Password contains one upper case letter"
+    else
+      message += "[v] Password contains one upper case letter"
+
+    if(!this.state.validationErrors.password_contain_number)
+      message += "[ ] Password contains at least one number"
+    else
+      message += "[v] Password contains at least one number"
+
+    if(!this.state.validationErrors.password_contain_special_char)
+      message += "[ ] Password contains at least one special char"
+    else
+      message += "[v] Password contains at least one special char"
+
+
+
+    return message
+  }
+
   handleChange(e) {
     const target = e.target
     const value = target.value
@@ -46,9 +78,51 @@ class PasswordForm extends React.Component {
 
     //check min length
     if(name === 'password') {
-      this.validationErrors.password_min_length = this.state.password.length <= this.validationRule.password_min_length ? false : true
+      const validationErrors = this.state.validationErrors
+      if(this.state.password.length <= this.state.validationRule.password_min_length) {
+        validationErrors.password_min_length = false
+      }
+      else {
+        validationErrors.password_min_length = true
+      }
+
+      //lower case
+
+      if(/[a-z]/.test(this.state.password)) {
+        validationErrors.password_lower_case_count = true
+      }
+      else {
+        validationErrors.password_lower_case_count = false
+      }
+
+      if(/[A-Z]/.test(this.state.password)) {
+        validationErrors.password_upper_case_count = true
+      }
+      else {
+        validationErrors.password_upper_case_count = false
+      }
+
+      if(/\d/.test(this.state.password)) {
+        validationErrors.password_contain_number = true
+      }
+      else {
+        validationErrors.password_contain_number = false
+      }
+
+      if(/\W/.test(this.state.password)) {
+        validationErrors.password_contain_special_char = true
+      }
+      else {
+        validationErrors.password_contain_special_char = false
+      }
 
 
+      this.setState({
+        validationErrors
+      })
+
+
+      console.log(this.state.validationErrors)
     }
 
   }
@@ -63,6 +137,8 @@ class PasswordForm extends React.Component {
           Password <input type='password' name='password' value={this.state.password} onChange={(e) => {this.handleChange(e)}}  required='required'/><br/>
           <button type='submit'>Save</button>
         </form>
+
+        {this.printMessage()}
 
       </div>
     )
