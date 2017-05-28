@@ -56,21 +56,22 @@ class Home extends React.Component {
           onChange={this.handleChange}
           value={this.state.slideIndex}
         >
-          <Tab label="Create New Password" value={0} />
-          <Tab label="List" value={1} />
+          <Tab label="List" value={0} />
+          <Tab label="Create New Password" value={1} />
         </Tabs>
         <SwipeableViews
           index={this.state.slideIndex}
           onChangeIndex={this.handleChange}
         >
-          <div>
-            <PasswordForm />
-          </div>
           <div style={styles.slide}>
             <SearchForm />
             <br/><br/>
             <SearchResult />
           </div>
+          <div>
+            <PasswordForm />
+          </div>
+
         </SwipeableViews>
 
       </div>

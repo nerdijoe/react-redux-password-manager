@@ -5,8 +5,7 @@ import { actionAddPassword } from '../actions'
 
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
+import {Card, CardTitle, CardText} from 'material-ui/Card';
 import Snackbar from 'material-ui/Snackbar';
 
 
@@ -24,30 +23,54 @@ const style = {
 };
 
 class PasswordForm extends React.Component {
-  state = {
-    url:'',
-    username: '',
-    password: '',
-    validationRule: {
-      password_min_length: 5,
-      password_lower_case_count: 1,
-      password_upper_case_count: 1,
-      password_contain_number: 1,
-      password_contain_special_char: 1
-    },
-    validationErrors: {
-      password_min_length: false,
-      password_lower_case_count: false,
-      password_upper_case_count: false,
-      password_contain_number: false,
-      password_contain_special_char: false
-    },
-    open: false
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      url:'',
+      username: '',
+      password: '',
+      validationRule: {
+        password_min_length: 5,
+        password_lower_case_count: 1,
+        password_upper_case_count: 1,
+        password_contain_number: 1,
+        password_contain_special_char: 1
+      },
+      validationErrors: {
+        password_min_length: false,
+        password_lower_case_count: false,
+        password_upper_case_count: false,
+        password_contain_number: false,
+        password_contain_special_char: false
+      },
+      open: false
+    }
+
   }
+
+
+
+  // handleTouchTap = () => {
+  //
+  //   this.setState({
+  //     open: true,
+  //   }, () => {
+  //     console.log(`PasswordForm>handleTouchTap state.open: ${this.state.open}`);
+  //   });
+  // };
+  //
+  // handleRequestClose = () => {
+  //   this.setState({
+  //     open: false,
+  //   });
+  // };
 
   handleTouchTap = () => {
     this.setState({
       open: true,
+    }, () => {
+      console.log((`handleTouchTap + ${this.state.open}`));
     });
   };
 
@@ -223,19 +246,21 @@ class PasswordForm extends React.Component {
 
             </CardText>
 
-            <CardActions>
-              {this.printMessage()}
-            </CardActions>
-
           </Card>
 
 
+          <RaisedButton
+            onTouchTap={this.handleTouchTap}
+            label="Snackbar"
+          />
+
           <Snackbar
             open={this.state.open}
-            message="Password has been added"
-            autoHideDuration={2000}
+            message="Password has been added."
+            autoHideDuration={1000}
             onRequestClose={this.handleRequestClose}
           />
+
       </div>
     )
   }
