@@ -81,3 +81,19 @@ export const deletePassword = (id) => {
     id
   }
 }
+
+export const actionDeletePassword = (id) => {
+
+  return (dispatch) => {
+    fetch(`http://localhost:5000/data/${id}`, {
+      method: 'delete'
+    })
+    .then( res => res.json() )
+    .then( res => {
+      console.log('actionDeletePassword');
+      console.log(res)
+      dispatch(deletePassword(id))
+    })
+  }
+
+}

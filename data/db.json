@@ -1,20 +1,6 @@
 {
   "data": [
     {
-      "id": "1f992f95-3439-4ca4-8f97-54c7046e404b",
-      "url": "theverge.com",
-      "username": "ijo",
-      "password": "haha",
-      "created_at": "2017-05-26T09:06:13.197Z"
-    },
-    {
-      "id": "9b0ce83f-566e-4fb4-80ee-5430c238880d",
-      "url": "espn.com",
-      "username": "rich",
-      "password": "haha",
-      "created_at": "2017-05-26T09:10:32.773Z"
-    },
-    {
       "id": "69d376ce-ce4e-4a03-bc5c-63d8bbfdf99e",
       "url": "verge.com",
       "username": "ijo",
@@ -27,13 +13,6 @@
       "username": "ijo",
       "password": "aabvv331!1II",
       "created_at": "2017-05-26T10:53:22.887Z"
-    },
-    {
-      "id": "9ccd5d92-2605-4373-b1ee-ee175767f679",
-      "url": "gmail.com",
-      "username": "ijo",
-      "password": "113mmMMM!!",
-      "created_at": "2017-05-26T10:54:23.925Z"
     }
   ]
 }
