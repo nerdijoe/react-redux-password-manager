@@ -9,10 +9,11 @@
     },
     {
       "id": "9c50dc4d-4578-465a-a5ce-df6c12b0f9ba",
-      "url": "google.com",
-      "username": "ijo",
-      "password": "aabvv331!1II",
-      "created_at": "2017-05-26T10:53:22.887Z"
+      "url": "www.google.com",
+      "username": "john",
+      "password": "haha",
+      "created_at": "2017-05-26T10:53:22.887Z",
+      "updated_at": "2017-05-28T10:01:33.525Z"
     },
     {
       "id": "ec9491ac-afe6-47be-8bf4-0eea98450865",
@@ -23,75 +24,11 @@
       "updated_at": "2017-05-28T04:48:48.062Z"
     },
     {
-      "id": "b7e8f681-fbff-4317-b4e6-cf9c9d938b60",
-      "url": "cavs.com",
-      "username": "james",
-      "password": "haha",
-      "created_at": "2017-05-28T07:09:19.078Z"
-    },
-    {
-      "id": "f3dbcf42-975e-4208-b1d8-f8fbcf217aff",
-      "url": "daftpunk.com",
-      "username": "daft",
-      "password": "haha",
-      "created_at": "2017-05-28T07:21:15.847Z"
-    },
-    {
-      "id": "e4cbfe1f-52a7-441c-96ac-405b0c492635",
-      "url": "card.com",
-      "username": "ijojo",
-      "password": "haha",
-      "created_at": "2017-05-28T08:05:07.714Z",
-      "updated_at": "2017-05-28T09:02:00.517Z"
-    },
-    {
-      "id": "e8b1b856-fcaa-467d-9cee-1df40d6a90d3",
-      "url": "lagi",
-      "username": "",
-      "password": "",
-      "created_at": "2017-05-28T08:05:30.190Z"
-    },
-    {
-      "id": "ab14df07-5321-4100-bfa2-1843d49f10e3",
-      "url": "thisshouldwork",
-      "username": "ijo",
-      "password": "haha",
-      "created_at": "2017-05-28T08:07:31.570Z"
-    },
-    {
-      "id": "f340cc9e-c12f-454b-8804-211809f2e32f",
-      "url": "digitallove",
-      "username": "daft",
-      "password": "haha",
-      "created_at": "2017-05-28T08:26:22.537Z"
-    },
-    {
-      "id": "038121bf-134b-4af0-95aa-62afdecf09ed",
-      "url": "naruto",
-      "username": "ijo",
-      "password": "haha",
-      "created_at": "2017-05-28T09:03:02.272Z"
-    },
-    {
-      "id": "1c4be898-b13d-4ab3-b869-3580da5ba440",
-      "url": "hey",
-      "username": "ijo",
-      "password": "haha",
-      "created_at": "2017-05-28T09:03:30.119Z"
-    },
-    {
-      "id": "9c37e0be-beb7-470a-b619-24b474406191",
+      "id": "bc4ecaec-3c4c-4c40-80a5-ed66ce54c8a6",
       "url": "test",
       "username": "ijo",
-      "password": "haha",
-      "created_at": "2017-05-28T09:39:54.441Z"
-    },
-    {
-      "id": "988ba740-7bdb-4ab9-ac5b-7c78827cde70",
-      "url": "test",
-      "username": "ijo",
-      "password": "haha",
-      "created_at": "2017-05-28T09:42:35.802Z"
+      "password": "13B!!1d",
+      "created_at": "2017-05-28T11:54:12.103Z"
     }
   ]
 }

@@ -23,7 +23,7 @@ export default class Nav extends React.Component {
 
         <AppBar
           title="Password Manager"
-          iconClassNameRight="muidocs-icon-navigation-expand-more"
+          
           onLeftIconButtonTouchTap={() => {this.handleToggle()}}
         />
 
