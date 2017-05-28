@@ -4,11 +4,11 @@ import { connect } from 'react-redux'
 import { actionAddPassword } from '../actions'
 import Style from './PasswordForm.style'
 
+import {Card, CardTitle, CardText} from 'material-ui/Card';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
-import {Card, CardTitle, CardText} from 'material-ui/Card';
 import Snackbar from 'material-ui/Snackbar';
-
+import Dialog from 'material-ui/Dialog';
 
 class PasswordForm extends React.Component {
 
@@ -32,27 +32,12 @@ class PasswordForm extends React.Component {
         password_contain_number: false,
         password_contain_special_char: false
       },
-      open: false
+      open: false,
+      is_submit_error: false
     }
 
   }
 
-
-
-  // handleTouchTap = () => {
-  //
-  //   this.setState({
-  //     open: true,
-  //   }, () => {
-  //     console.log(`PasswordForm>handleTouchTap state.open: ${this.state.open}`);
-  //   });
-  // };
-  //
-  // handleRequestClose = () => {
-  //   this.setState({
-  //     open: false,
-  //   });
-  // };
 
   handleTouchTap = () => {
     this.setState({
@@ -60,7 +45,7 @@ class PasswordForm extends React.Component {
     }, () => {
       console.log((`handleTouchTap + ${this.state.open}`));
     });
-  };
+  }
 
   handleRequestClose = () => {
     this.setState({
@@ -68,10 +53,31 @@ class PasswordForm extends React.Component {
     });
   };
 
+
+  handleOpen = () => {
+    this.setState({open: true});
+  };
+
+  handleClose = () => {
+    this.setState({open: false});
+  };
+
+
+  handleErrorOpen = () => {
+    this.setState({is_submit_error: true});
+  };
+
+  handleErrorClose = () => {
+    this.setState({is_submit_error: false});
+  };
+
+
+
   handleSubmit(e) {
     e.preventDefault()
 
     console.log(`handleSubmit`, this.state)
+
 
     //check validation, if all true then proceed
 
@@ -80,16 +86,21 @@ class PasswordForm extends React.Component {
 
       this.clearFields()
       this.clearErrors()
-      this.handleTouchTap()
+      // this.handleTouchTap()
+      this.handleOpen()
     }
     else {
       console.log('Password invalid')
+      this.handleErrorOpen()
     }
 
-
-
-
   }
+
+  printSubmitError(){
+    if(this.state.is_submit_error)
+      return "Please check your password again."
+  }
+
 
   clearFields() {
     this.setState({
@@ -261,9 +272,6 @@ class PasswordForm extends React.Component {
 
       }
     })
-
-
-
   }
 
   render() {
@@ -280,6 +288,7 @@ class PasswordForm extends React.Component {
                   id="text-field-default"
                   name='url'
                   value={this.state.url}
+                  required='yes'
                   onChange={(e) => {this.handleChange(e)}}
                 />
                 <br />
@@ -289,6 +298,7 @@ class PasswordForm extends React.Component {
                   id="text-field-default"
                   name='username'
                   value={this.state.username}
+                  required='yes'
                   onChange={(e) => {this.handleChange(e)}}
                 />
                 <br />
@@ -298,6 +308,7 @@ class PasswordForm extends React.Component {
                   id="text-field-default"
                   name='password'
                   value={this.state.password}
+                  required='yes'
                   onChange={(e) => {this.handleChange(e)}}
                   type="password"
                 />
@@ -321,18 +332,32 @@ class PasswordForm extends React.Component {
             <div style={Style.message}>{this.printMessagePerLine(5)}</div>
           </div>
 
-          <br />
-          <RaisedButton
-            onTouchTap={this.handleTouchTap}
-            label="Snackbar"
-          />
 
           <Snackbar
             open={this.state.open}
             message="Password has been added."
-            autoHideDuration={1000}
+            autoHideDuration={3000}
             onRequestClose={this.handleRequestClose}
           />
+
+          <div>
+            <Dialog
+              modal={false}
+              open={this.state.open}
+              onRequestClose={this.handleClose}
+            >
+              Password has been added.
+            </Dialog>
+
+            <Dialog
+              modal={false}
+              open={this.state.is_submit_error}
+              onRequestClose={this.handleErrorClose}
+
+            >
+              <div style={Style.dialogErrorText}>Please check your password. Your password is not strong enough.</div>
+            </Dialog>
+          </div>
 
       </div>
     )

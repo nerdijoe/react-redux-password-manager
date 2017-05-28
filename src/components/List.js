@@ -9,7 +9,6 @@ class List extends React.Component {
   render() {
     return (
       <div>
-        List
         <SearchForm />
         <SearchResult />
         <TestMui />

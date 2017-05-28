@@ -16,11 +16,8 @@ import {
   TableRowColumn,
 } from 'material-ui/Table';
 import FlatButton from 'material-ui/FlatButton'
-import FontIcon from 'material-ui/FontIcon';
-import ActionAndroid from 'material-ui/svg-icons/action/android';
 import IconClear from 'material-ui/svg-icons/content/clear'
 import IconCreate from 'material-ui/svg-icons/content/create'
-import {fullWhite} from 'material-ui/styles/colors';
 
 class SearchResult extends React.Component {
 

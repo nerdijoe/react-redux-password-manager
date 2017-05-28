@@ -16,6 +16,7 @@ const style = {
   messageContainer: {
     display: 'block',
     margin: 'auto',
+
     padding: 30
   },
   dialogErrorText: {

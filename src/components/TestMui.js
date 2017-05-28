@@ -37,15 +37,15 @@ class TestMui extends React.Component{
           <RaisedButton label="Default" />
 
           <RaisedButton
-                    onTouchTap={this.handleTouchTap}
-                    label="Add to my calendar"
-                  />
-                  <Snackbar
-                    open={this.state.open}
-                    message="Hey"
-                    autoHideDuration={1000}
-                    onRequestClose={this.handleRequestClose}
-                  />
+            onTouchTap={this.handleTouchTap}
+            label="Add to my calendar"
+          />
+          <Snackbar
+            open={this.state.open}
+            message="Hey"
+            autoHideDuration={1000}
+            onRequestClose={this.handleRequestClose}
+          />
         </div>
 
       </MuiThemeProvider>
