@@ -5,7 +5,9 @@ import {
   INCREMENT_LAST_ID,
   ADD_PASSWORD,
   SEARCH,
-  DELETE
+  DELETE,
+  GET_BY_ID,
+  EDIT
 } from './constants'
 
 export const fetchData = (data) => {
@@ -96,4 +98,43 @@ export const actionDeletePassword = (id) => {
     })
   }
 
+}
+
+export const getById = (id) => {
+  return {
+    type: GET_BY_ID,
+    id
+  }
+}
+
+export const editPassword = (edit_item) => {
+  return {
+    type: EDIT,
+    edit_item
+  }
+}
+
+export const actionEditPassword = (form) => {
+  return (dispatch) => {
+    fetch(`http://localhost:5000/data/${form.id}`, {
+      method: 'PATCH',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        "url": form.url,
+        "username": form.username,
+        "password": form.password,
+        "updated_at": new Date()
+      })
+    })
+    .then( res => res.json() )
+    .then( res => {
+      console.log('actionEditPassword');
+      console.log(res)
+
+      dispatch(editPassword(res))
+    })
+  }
 }

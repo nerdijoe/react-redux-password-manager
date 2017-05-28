@@ -3,13 +3,16 @@ import {
   INCREMENT_LAST_ID,
   ADD_PASSWORD,
   SEARCH,
-  DELETE
+  DELETE,
+  GET_BY_ID,
+  EDIT
 } from '../actions/constants'
 
 const initialState = {
   data: [],
   last_id: 0,
-  search_result: []
+  search_result: [],
+  selected_data: {}
 }
 
 const passwordReducer = (state = initialState, action) => {
@@ -42,6 +45,20 @@ const passwordReducer = (state = initialState, action) => {
         updatedData.splice(pos,1)
 
       return {...state, data: updatedData, search_result: updatedData}
+    }
+    case GET_BY_ID: {
+      let pos = state.data.findIndex ( d=> d.id === action.id )
+      let found_data = null
+      if( pos !== -1 )
+        found_data = {...state.data[pos]}
+      return {...state, selected_data: found_data}
+    }
+    case EDIT: {
+      let updatedData = [...state.data]
+      let pos = updatedData.findIndex( d => d.id === action.edit_item.id )
+      if( pos !== -1 )
+        updatedData.splice(pos, 1, action.edit_item)
+      return {...state, data: updatedData, search_result: updatedData }
     }
     default: return state
   }
