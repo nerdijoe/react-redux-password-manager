@@ -14,9 +14,11 @@ const style = {
 
   button: {
     margin: 12,
+    align: 'right'
   },
   card: {
-    width: 400
+    margin:40,
+    width: 300
   }
 
 };
@@ -183,44 +185,6 @@ class PasswordForm extends React.Component {
     return (
       <div>
 
-        <form onSubmit={(e) => { this.handleSubmit(e)} }>
-
-          <TextField
-            floatingLabelText="URL"
-            id="text-field-default"
-            name='url'
-            defaultValue={this.state.url}
-            onChange={(e) => {this.handleChange(e)}}
-          />
-          <br />
-
-          <TextField
-            floatingLabelText="Username"
-            id="text-field-default"
-            name='username'
-            defaultValue={this.state.username}
-            onChange={(e) => {this.handleChange(e)}}
-          />
-          <br />
-
-          <TextField
-            floatingLabelText="Password"
-            id="text-field-default"
-            name='password'
-            defaultValue={this.state.password}
-            onChange={(e) => {this.handleChange(e)}}
-            type="password"
-          />
-          <br />
-
-          <RaisedButton label="Save" primary={true} style={style} type="submit" />
-        </form>
-
-
-        {this.printMessage()}
-
-
-
         <Card style={style.card}>
             <CardTitle title="Create New Password" />
             <CardText>
@@ -258,6 +222,10 @@ class PasswordForm extends React.Component {
               </form>
 
             </CardText>
+
+            <CardActions>
+              {this.printMessage()}
+            </CardActions>
 
           </Card>
 

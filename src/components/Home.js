@@ -63,9 +63,7 @@ class Home extends React.Component {
           index={this.state.slideIndex}
           onChangeIndex={this.handleChange}
         >
-          <div className='home'>
-            <h2 style={styles.headline}>Create New Password</h2>
-
+          <div>
             <PasswordForm />
           </div>
           <div style={styles.slide}>
