@@ -4,8 +4,8 @@ import Style from './Footer.style'
 
 const Footer = () => {
   return (
-    <div>
-
+    <div style={Style.myFooter}>
+      
     </div>
   )
 }
