@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 
 import { actionAddPassword, getById, actionEditPassword } from '../actions'
 
@@ -23,7 +24,8 @@ class PasswordForm extends React.Component {
       password_upper_case_count: false,
       password_contain_number: false,
       password_contain_special_char: false
-    }
+    },
+    is_submitted: false
   }
 
   constructor(props) {
@@ -67,7 +69,8 @@ class PasswordForm extends React.Component {
     this.setState({
       url: '',
       username: '',
-      password: ''
+      password: '',
+      is_submitted: true
     })
   }
 
@@ -165,20 +168,33 @@ class PasswordForm extends React.Component {
   }
 
   render() {
-    return (
-      <div>
+    if(this.state.is_submitted) {
+      return (
+        <div>
+          <Redirect to={{
+            pathname: '/',
+            state: { from: this.props.location }
+          }} />
+        </div>
+      )
+    }
+    else {
+      return (
+        <div>
 
-        <form onSubmit={(e) => { this.handleSubmit(e)} }>
-          URL <input type='text' name='url' value={this.state.url} onChange={(e) => {this.handleChange(e)}} required='required'/><br/>
-          Username <input type='text' name='username' value={this.state.username} onChange={(e) => {this.handleChange(e)}} required='required'/><br/>
-          Password <input type='password' name='password' value={this.state.password} onChange={(e) => {this.handleChange(e)}}  required='required'/><br/>
-          <button type='submit'>Save</button>
-        </form>
+          <form onSubmit={(e) => { this.handleSubmit(e)} }>
+            URL <input type='text' name='url' value={this.state.url} onChange={(e) => {this.handleChange(e)}} required='required'/><br/>
+            Username <input type='text' name='username' value={this.state.username} onChange={(e) => {this.handleChange(e)}} required='required'/><br/>
+            Password <input type='password' name='password' value={this.state.password} onChange={(e) => {this.handleChange(e)}}  required='required'/><br/>
+            <button type='submit'>Save</button>
+          </form>
 
-        {this.printMessage()}
+          {this.printMessage()}
 
-      </div>
-    )
+        </div>
+      )
+    }
+
   }
 }
 
