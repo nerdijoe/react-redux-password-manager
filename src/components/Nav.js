@@ -24,8 +24,8 @@ export default class Nav extends React.Component {
 
         <AppBar
           title="Password Manager"
-
           onLeftIconButtonTouchTap={() => {this.handleToggle()}}
+          style={Style.appBarTitle}
         />
 
         <Drawer
