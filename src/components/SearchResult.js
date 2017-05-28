@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 import { actionDeletePassword } from '../actions'
 
@@ -40,6 +41,7 @@ class SearchResult extends React.Component {
                 <td>{created_at}</td>
                 <td>{updated_at}</td>
                 <td><button onClick={() => {this.handleDelete(d.id)}}>Delete</button></td>
+                <td><Link to={`/edit/${d.id}`}><button>Edit</button></Link></td>
               </tr>
             )
           })}

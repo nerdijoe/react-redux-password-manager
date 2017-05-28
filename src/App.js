@@ -9,6 +9,7 @@ import './App.css';
 import Home from './components/Home'
 import Nav from './components/Nav'
 import List from './components/List'
+import EditForm from './components/EditForm'
 
 class App extends Component {
   render() {
@@ -20,6 +21,7 @@ class App extends Component {
 
             <Route exact path="/" component={Home} />
             <Route exact path="/list" component={List} />
+            <Route exact path="/edit/:id" component={(props) => <EditForm match={props.match}/>} />
 
           </div>
         </BrowserRouter>
