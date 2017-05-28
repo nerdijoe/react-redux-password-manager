@@ -323,14 +323,17 @@ class PasswordForm extends React.Component {
 
           </Card>
 
-          <div style={Style.messageContainer}>
-            <div style={Style.message}>{this.printMessagePerLine(0)}</div>
-            <div style={Style.message}>{this.printMessagePerLine(1)}</div>
-            <div style={Style.message}>{this.printMessagePerLine(2)}</div>
-            <div style={Style.message}>{this.printMessagePerLine(3)}</div>
-            <div style={Style.message}>{this.printMessagePerLine(4)}</div>
-            <div style={Style.message}>{this.printMessagePerLine(5)}</div>
-          </div>
+
+          <Card style={Style.messageCard}>
+            <CardTitle title="Password strength" titleColor="grey"/>
+            <CardText>
+              <div style={Style.message}>{this.printMessagePerLine(1)}</div>
+              <div style={Style.message}>{this.printMessagePerLine(2)}</div>
+              <div style={Style.message}>{this.printMessagePerLine(3)}</div>
+              <div style={Style.message}>{this.printMessagePerLine(4)}</div>
+              <div style={Style.message}>{this.printMessagePerLine(5)}</div>
+            </CardText>
+          </Card>
 
 
           <Snackbar
@@ -340,24 +343,22 @@ class PasswordForm extends React.Component {
             onRequestClose={this.handleRequestClose}
           />
 
-          <div>
-            <Dialog
-              modal={false}
-              open={this.state.open}
-              onRequestClose={this.handleClose}
-            >
-              Password has been added.
-            </Dialog>
+          <Dialog
+            modal={false}
+            open={this.state.open}
+            onRequestClose={this.handleClose}
+          >
+            Password has been added.
+          </Dialog>
 
-            <Dialog
-              modal={false}
-              open={this.state.is_submit_error}
-              onRequestClose={this.handleErrorClose}
+          <Dialog
+            modal={false}
+            open={this.state.is_submit_error}
+            onRequestClose={this.handleErrorClose}
+          >
+            <div style={Style.dialogErrorText}>Please check your password. Your password is not strong enough.</div>
+          </Dialog>
 
-            >
-              <div style={Style.dialogErrorText}>Please check your password. Your password is not strong enough.</div>
-            </Dialog>
-          </div>
 
       </div>
     )

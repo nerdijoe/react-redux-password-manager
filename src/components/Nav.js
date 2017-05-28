@@ -4,6 +4,7 @@ import AppBar from 'material-ui/AppBar';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 
+import Style from './Nav.style'
 
 export default class Nav extends React.Component {
 
@@ -23,7 +24,7 @@ export default class Nav extends React.Component {
 
         <AppBar
           title="Password Manager"
-          
+
           onLeftIconButtonTouchTap={() => {this.handleToggle()}}
         />
 
@@ -33,8 +34,8 @@ export default class Nav extends React.Component {
           open={this.state.open}
           onRequestChange={(open) => this.setState({open})}
         >
-          <MenuItem onTouchTap={this.handleClose}><Link to="/" >Home</Link></MenuItem>
-          <MenuItem onTouchTap={this.handleClose}><Link to="/list" >List</Link></MenuItem>
+          <Link to="/" style={Style.link}><MenuItem onTouchTap={this.handleClose}>Home</MenuItem></Link>
+          <Link to="/list" style={Style.link}><MenuItem onTouchTap={this.handleClose}>List</MenuItem></Link>
         </Drawer>
 
       </div>

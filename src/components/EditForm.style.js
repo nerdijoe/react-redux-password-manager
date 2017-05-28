@@ -8,7 +8,7 @@ const style = {
   card: {
     margin: 'auto',
     marginTop: 30,
-    width: 300
+    width: 400
   },
   message: {
     fontSize: '1em'
@@ -18,6 +18,11 @@ const style = {
     margin: 'auto',
 
     padding: 30
+  },
+  messageCard:{
+    margin: 'auto',
+    marginTop: 0,
+    width: 400
   },
   dialogErrorText: {
     color: 'red'

@@ -18,7 +18,7 @@ import Home from './components/Home'
 import Nav from './components/Nav'
 import List from './components/List'
 import EditForm from './components/EditForm'
-
+import Footer from './components/Footer'
 injectTapEventPlugin();
 
 const muiTheme = getMuiTheme({

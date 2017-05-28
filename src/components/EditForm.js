@@ -12,35 +12,35 @@ import Snackbar from 'material-ui/Snackbar';
 import Dialog from 'material-ui/Dialog';
 
 
-class PasswordForm extends React.Component {
+class EditForm extends React.Component {
 
-  state = {
-    id: '',
-    url:'',
-    username: '',
-    password: '',
-    validationRule: {
-      password_min_length: 5,
-      password_lower_case_count: 1,
-      password_upper_case_count: 1,
-      password_contain_number: 1,
-      password_contain_special_char: 1
-    },
-    validationErrors: {
-      password_min_length: false,
-      password_lower_case_count: false,
-      password_upper_case_count: false,
-      password_contain_number: false,
-      password_contain_special_char: false
-    },
-    is_submitted: false,
-    open: false
-  }
 
   constructor(props) {
     super(props)
     this.id = this.props.match.params.id
 
+    this.state = {
+      id: '',
+      url:'',
+      username: '',
+      password: '',
+      validationRule: {
+        password_min_length: 5,
+        password_lower_case_count: 1,
+        password_upper_case_count: 1,
+        password_contain_number: 1,
+        password_contain_special_char: 1
+      },
+      validationErrors: {
+        password_min_length: false,
+        password_lower_case_count: false,
+        password_upper_case_count: false,
+        password_contain_number: false,
+        password_contain_special_char: false
+      },
+      is_submit_error: false,
+      open: false
+    }
 
   }
 
@@ -313,6 +313,7 @@ class PasswordForm extends React.Component {
                     id="text-field-default"
                     name='url'
                     value={this.state.url}
+                    required='yes'
                     onChange={(e) => {this.handleChange(e)}}
                   />
                   <br />
@@ -322,6 +323,7 @@ class PasswordForm extends React.Component {
                     id="text-field-default"
                     name='username'
                     value={this.state.username}
+                    required='yes'
                     onChange={(e) => {this.handleChange(e)}}
                   />
                   <br />
@@ -331,6 +333,7 @@ class PasswordForm extends React.Component {
                     id="text-field-default"
                     name='password'
                     value={this.state.password}
+                    required='yes'
                     onChange={(e) => {this.handleChange(e)}}
                     type="password"
                   />
@@ -347,14 +350,16 @@ class PasswordForm extends React.Component {
 
             </Card>
 
-            <div style={Style.messageContainer}>
-              <div style={Style.message}>{this.printMessagePerLine(0)}</div>
-              <div style={Style.message}>{this.printMessagePerLine(1)}</div>
-              <div style={Style.message}>{this.printMessagePerLine(2)}</div>
-              <div style={Style.message}>{this.printMessagePerLine(3)}</div>
-              <div style={Style.message}>{this.printMessagePerLine(4)}</div>
-              <div style={Style.message}>{this.printMessagePerLine(5)}</div>
-            </div>
+            <Card style={Style.messageCard}>
+              <CardTitle title="Password strength" titleColor="grey"/>
+              <CardText>
+                <div style={Style.message}>{this.printMessagePerLine(1)}</div>
+                <div style={Style.message}>{this.printMessagePerLine(2)}</div>
+                <div style={Style.message}>{this.printMessagePerLine(3)}</div>
+                <div style={Style.message}>{this.printMessagePerLine(4)}</div>
+                <div style={Style.message}>{this.printMessagePerLine(5)}</div>
+              </CardText>
+            </Card>
 
             <Snackbar
               open={this.state.open}
@@ -393,5 +398,5 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-const connectedPasswordForm = connect(mapStateToProps, mapDispatchToProps)(PasswordForm)
-export default connectedPasswordForm
+const connectedEditForm = connect(mapStateToProps, mapDispatchToProps)(EditForm)
+export default connectedEditForm
