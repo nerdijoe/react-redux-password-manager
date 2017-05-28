@@ -2,7 +2,8 @@ import {
   FETCH_DATA,
   INCREMENT_LAST_ID,
   ADD_PASSWORD,
-  SEARCH
+  SEARCH,
+  DELETE
 } from '../actions/constants'
 
 const initialState = {
@@ -33,6 +34,14 @@ const passwordReducer = (state = initialState, action) => {
       })
       console.log('SEARCH', result)
       return { ...state, search_result: result }
+    }
+    case DELETE: {
+      let updatedData = [...state.data]
+      let pos = updatedData.findIndex( d => d.id === action.id )
+      if( pos !== -1 )
+        updatedData.splice(pos,1)
+
+      return {...state, data: updatedData, search_result: updatedData}
     }
     default: return state
   }

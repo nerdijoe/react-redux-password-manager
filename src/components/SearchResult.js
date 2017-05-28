@@ -1,9 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+import { actionDeletePassword } from '../actions'
+
 class SearchResult extends React.Component {
   handleDelete(id) {
     console.log('handleDelete ' + id)
+    this.props.actionDeletePassword(id)
   }
 
   render() {
@@ -54,5 +57,12 @@ const mapStateToProps = (state) => {
   }
 }
 
-const connectedSearchResult = connect(mapStateToProps, null)(SearchResult)
+const mapDispatchToProps = (dispatch) => {
+  return {
+    actionDeletePassword: (id) => { dispatch(actionDeletePassword(id)) }
+  }
+}
+
+
+const connectedSearchResult = connect(mapStateToProps, mapDispatchToProps)(SearchResult)
 export default connectedSearchResult
