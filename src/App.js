@@ -33,19 +33,19 @@ class App extends Component {
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
 
-      <Provider store={store}>
-        <BrowserRouter>
-            <div>
-              <Nav />
+        <Provider store={store}>
+          <BrowserRouter>
+              <div>
+                <Nav />
 
-              <Route exact path="/" component={Home} />
-              <Route exact path="/list" component={List} />
-              <Route exact path="/edit/:id" component={(props) => <EditForm match={props.match}/>} />
+                <Route exact path="/" component={Home} />
+                <Route exact path="/list" component={List} />
+                <Route exact path="/edit/:id" component={(props) => <EditForm match={props.match}/>} />
 
-            </div>
+              </div>
 
-        </BrowserRouter>
-      </Provider>
+          </BrowserRouter>
+        </Provider>
 
       </MuiThemeProvider>
     );

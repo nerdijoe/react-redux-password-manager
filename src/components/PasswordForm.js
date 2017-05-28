@@ -3,6 +3,24 @@ import { connect } from 'react-redux'
 
 import { actionAddPassword } from '../actions'
 
+import TextField from 'material-ui/TextField';
+import RaisedButton from 'material-ui/RaisedButton';
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import FlatButton from 'material-ui/FlatButton';
+import Snackbar from 'material-ui/Snackbar';
+
+
+const style = {
+
+  button: {
+    margin: 12,
+  },
+  card: {
+    width: 400
+  }
+
+};
+
 class PasswordForm extends React.Component {
   state = {
     url:'',
@@ -21,8 +39,21 @@ class PasswordForm extends React.Component {
       password_upper_case_count: false,
       password_contain_number: false,
       password_contain_special_char: false
-    }
+    },
+    open: false
   }
+
+  handleTouchTap = () => {
+    this.setState({
+      open: true,
+    });
+  };
+
+  handleRequestClose = () => {
+    this.setState({
+      open: false,
+    });
+  };
 
   handleSubmit(e) {
     e.preventDefault()
@@ -39,12 +70,20 @@ class PasswordForm extends React.Component {
     validationErrors.password_upper_case_count = false
     validationErrors.password_contain_number = false
     validationErrors.password_contain_special_char = false
-    
+
+    this.clearFields()
+    this.handleTouchTap()
+  }
+
+  clearFields() {
     this.setState({
       url: '',
       username: '',
       password: ''
+    }, () => {
+      console.log("*** clear form fields",this.state)
     })
+
   }
 
   printMessage() {
@@ -145,14 +184,90 @@ class PasswordForm extends React.Component {
       <div>
 
         <form onSubmit={(e) => { this.handleSubmit(e)} }>
-          URL <input type='text' name='url' value={this.state.url} onChange={(e) => {this.handleChange(e)}} required='required'/><br/>
-          Username <input type='text' name='username' value={this.state.username} onChange={(e) => {this.handleChange(e)}} required='required'/><br/>
-          Password <input type='password' name='password' value={this.state.password} onChange={(e) => {this.handleChange(e)}}  required='required'/><br/>
-          <button type='submit'>Save</button>
+
+          <TextField
+            floatingLabelText="URL"
+            id="text-field-default"
+            name='url'
+            defaultValue={this.state.url}
+            onChange={(e) => {this.handleChange(e)}}
+          />
+          <br />
+
+          <TextField
+            floatingLabelText="Username"
+            id="text-field-default"
+            name='username'
+            defaultValue={this.state.username}
+            onChange={(e) => {this.handleChange(e)}}
+          />
+          <br />
+
+          <TextField
+            floatingLabelText="Password"
+            id="text-field-default"
+            name='password'
+            defaultValue={this.state.password}
+            onChange={(e) => {this.handleChange(e)}}
+            type="password"
+          />
+          <br />
+
+          <RaisedButton label="Save" primary={true} style={style} type="submit" />
         </form>
+
 
         {this.printMessage()}
 
+
+
+        <Card style={style.card}>
+            <CardTitle title="Create New Password" />
+            <CardText>
+              <form onSubmit={(e) => { this.handleSubmit(e)} }>
+
+                <TextField
+                  floatingLabelText="URL"
+                  id="text-field-default"
+                  name='url'
+                  value={this.state.url}
+                  onChange={(e) => {this.handleChange(e)}}
+                />
+                <br />
+
+                <TextField
+                  floatingLabelText="Username"
+                  id="text-field-default"
+                  name='username'
+                  value={this.state.username}
+                  onChange={(e) => {this.handleChange(e)}}
+                />
+                <br />
+
+                <TextField
+                  floatingLabelText="Password"
+                  id="text-field-default"
+                  name='password'
+                  value={this.state.password}
+                  onChange={(e) => {this.handleChange(e)}}
+                  type="password"
+                />
+                <br />
+
+                <RaisedButton label="Save" primary={true} style={style.button} type="submit" />
+              </form>
+
+            </CardText>
+
+          </Card>
+
+
+          <Snackbar
+            open={this.state.open}
+            message="Password has been added"
+            autoHideDuration={2000}
+            onRequestClose={this.handleRequestClose}
+          />
       </div>
     )
   }
