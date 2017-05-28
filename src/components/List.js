@@ -2,7 +2,7 @@ import React from 'react'
 
 import SearchForm from './SearchForm'
 import SearchResult from './SearchResult'
-import TestMui from './TestMui'
+// import TestMui from './TestMui'
 
 class List extends React.Component {
 
@@ -11,7 +11,7 @@ class List extends React.Component {
       <div>
         <SearchForm />
         <SearchResult />
-        <TestMui />
+
       </div>
     )
   }

@@ -1,5 +1,5 @@
 const style = {
-  footer: {
+  myFooter: {
     margin: 'auto',
     padding: 100
   }

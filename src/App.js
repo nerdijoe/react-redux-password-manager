@@ -41,7 +41,7 @@ class App extends Component {
                 <Route exact path="/" component={Home} />
                 <Route exact path="/list" component={List} />
                 <Route exact path="/edit/:id" component={(props) => <EditForm match={props.match}/>} />
-
+                <Footer />
               </div>
 
           </BrowserRouter>
