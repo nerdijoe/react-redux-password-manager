@@ -7,7 +7,38 @@ import PasswordForm from './PasswordForm'
 import SearchForm from './SearchForm'
 import SearchResult from './SearchResult'
 
+import './Home.css';
+
+// import TestMui from './TestMui'
+
+import {Tabs, Tab} from 'material-ui/Tabs';
+import SwipeableViews from 'react-swipeable-views';
+
+
+const styles = {
+  headline: {
+    fontSize: 24,
+    paddingTop: 16,
+    marginBottom: 12,
+    fontWeight: 400,
+  },
+  slide: {
+    padding: 10,
+  },
+};
+
+
 class Home extends React.Component {
+
+  state = {
+    slideIndex: 0,
+  };
+
+  handleChange = (value) => {
+    this.setState({
+      slideIndex: value,
+    });
+  };
 
   componentDidMount() {
     console.log("componentDidMount")
@@ -20,14 +51,28 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <br/>
-        Home
-        <br/><br/>
-        <PasswordForm />
-        <br/><br/>
-        <SearchForm />
-        <br/><br/>
-        <SearchResult />
+
+        <Tabs
+          onChange={this.handleChange}
+          value={this.state.slideIndex}
+        >
+          <Tab label="List" value={0} />
+          <Tab label="Create New Password" value={1} />
+        </Tabs>
+        <SwipeableViews
+          index={this.state.slideIndex}
+          onChangeIndex={this.handleChange}
+        >
+          <div style={styles.slide}>
+            <SearchForm />
+            <br/><br/>
+            <SearchResult />
+          </div>
+          <div>
+            <PasswordForm />
+          </div>
+
+        </SwipeableViews>
 
       </div>
     )

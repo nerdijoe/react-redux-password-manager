@@ -1,7 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import TextField from 'material-ui/TextField';
+
 
 import { search } from '../actions'
+import Style from './SearchForm.style'
 
 class SearchForm extends React.Component {
   state = {
@@ -24,8 +27,16 @@ class SearchForm extends React.Component {
 
   render() {
     return(
-      <form onSubmit={(e) => {this.handleSubmit(e)}}>
-        <input type="text" name="search" value={this.state.text} onChange={(e) => { this.handleChange(e) }} />
+      <form onSubmit={(e) => {this.handleSubmit(e)}}  style={Style.searchForm}>
+        <TextField
+          floatingLabelText="Search"
+          id="text-field-default"
+          name='search'
+          value={this.state.text}
+          onChange={(e) => { this.handleChange(e) }}
+          style={Style.searchField}
+        />
+
       </form>
     )
   }
