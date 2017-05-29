@@ -10,9 +10,9 @@ export default class Nav extends React.Component {
 
   state = {open: false};
 
-  handleLeftIconButtonTouchTap() {
-    console.log("hey")
-  }
+  // handleLeftIconButtonTouchTap() {
+  //   console.log("hey")
+  // }
 
   handleToggle = () => this.setState({open: !this.state.open});
 

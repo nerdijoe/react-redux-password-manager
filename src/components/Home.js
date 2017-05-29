@@ -28,7 +28,7 @@ const styles = {
 };
 
 
-class Home extends React.Component {
+export class Home extends React.Component {
 
   state = {
     slideIndex: 0,
@@ -85,7 +85,7 @@ const mapStateToProps = (state) => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
+export const mapDispatchToProps = (dispatch) => {
   return {
     actionFetchData: () => { dispatch(actionFetchData())}
   }

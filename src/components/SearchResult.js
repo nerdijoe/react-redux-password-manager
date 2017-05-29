@@ -19,7 +19,7 @@ import FlatButton from 'material-ui/FlatButton'
 import IconClear from 'material-ui/svg-icons/content/clear'
 import IconCreate from 'material-ui/svg-icons/content/create'
 
-class SearchResult extends React.Component {
+export class SearchResult extends React.Component {
 
   state = {
     fixedHeader: true,
@@ -90,7 +90,7 @@ class SearchResult extends React.Component {
                 <TableRowColumn>{d.password}</TableRowColumn>
                 <TableRowColumn>{created_at}</TableRowColumn>
                 <TableRowColumn>{updated_at}</TableRowColumn>
-                <TableRowColumn><FlatButton onClick={() => {this.handleDelete(d.id)}} icon={<IconClear />}></FlatButton>
+                <TableRowColumn><FlatButton id='deleteButton' onClick={() => {this.handleDelete(d.id)}} icon={<IconClear />}></FlatButton>
                 </TableRowColumn>
                 <TableRowColumn><Link to={`/edit/${d.id}`}><FlatButton icon={<IconCreate />} /></Link></TableRowColumn>
               </TableRow>
