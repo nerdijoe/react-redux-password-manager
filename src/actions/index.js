@@ -18,7 +18,9 @@ export const fetchData = (data) => {
 }
 
 export const actionFetchData = () => {
+
   return(dispatch) => {
+    console.log('actionFetchData');
     fetch('http://localhost:5000/data')
     .then( res => res.json() )
     .then (res => {

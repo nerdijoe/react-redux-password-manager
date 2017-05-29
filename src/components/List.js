@@ -11,7 +11,6 @@ class List extends React.Component {
       <div>
         <SearchForm />
         <SearchResult />
-
       </div>
     )
   }

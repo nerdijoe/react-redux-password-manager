@@ -1,0 +1,417 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Nav /> should render Nav 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <div>
+    <AppBar
+        onLeftIconButtonTouchTap={[Function]}
+        showMenuIconButton={true}
+        style={
+            Object {
+                "textAlign": "center",
+              }
+        }
+        title="Password Manager"
+        zDepth={1}
+    />
+    <Drawer
+        disableSwipeToOpen={false}
+        docked={false}
+        onRequestChange={[Function]}
+        open={false}
+        openSecondary={false}
+        swipeAreaWidth={30}
+        width={200}
+        zDepth={2}
+    >
+        <Link
+            replace={false}
+            style={
+                Object {
+                    "textDecoration": "none",
+                  }
+            }
+            to="/"
+        >
+            <MenuItem
+                anchorOrigin={
+                    Object {
+                        "horizontal": "right",
+                        "vertical": "top",
+                      }
+                }
+                checked={false}
+                desktop={false}
+                disabled={false}
+                focusState="none"
+                insetChildren={false}
+                onTouchTap={[Function]}
+                targetOrigin={
+                    Object {
+                        "horizontal": "left",
+                        "vertical": "top",
+                      }
+                }
+            >
+                Home
+            </MenuItem>
+        </Link>
+        <Link
+            replace={false}
+            style={
+                Object {
+                    "textDecoration": "none",
+                  }
+            }
+            to="/list"
+        >
+            <MenuItem
+                anchorOrigin={
+                    Object {
+                        "horizontal": "right",
+                        "vertical": "top",
+                      }
+                }
+                checked={false}
+                desktop={false}
+                disabled={false}
+                focusState="none"
+                insetChildren={false}
+                onTouchTap={[Function]}
+                targetOrigin={
+                    Object {
+                        "horizontal": "left",
+                        "vertical": "top",
+                      }
+                }
+            >
+                List
+            </MenuItem>
+        </Link>
+    </Drawer>
+</div>,
+  "nodes": Array [
+    <div>
+      <AppBar
+            onLeftIconButtonTouchTap={[Function]}
+            showMenuIconButton={true}
+            style={
+                  Object {
+                        "textAlign": "center",
+                      }
+            }
+            title="Password Manager"
+            zDepth={1}
+      />
+      <Drawer
+            disableSwipeToOpen={false}
+            docked={false}
+            onRequestChange={[Function]}
+            open={false}
+            openSecondary={false}
+            swipeAreaWidth={30}
+            width={200}
+            zDepth={2}
+      >
+            <Link
+                  replace={false}
+                  style={
+                        Object {
+                              "textDecoration": "none",
+                            }
+                  }
+                  to="/"
+            >
+                  <MenuItem
+                        anchorOrigin={
+                              Object {
+                                    "horizontal": "right",
+                                    "vertical": "top",
+                                  }
+                        }
+                        checked={false}
+                        desktop={false}
+                        disabled={false}
+                        focusState="none"
+                        insetChildren={false}
+                        onTouchTap={[Function]}
+                        targetOrigin={
+                              Object {
+                                    "horizontal": "left",
+                                    "vertical": "top",
+                                  }
+                        }
+                  >
+                        Home
+                  </MenuItem>
+            </Link>
+            <Link
+                  replace={false}
+                  style={
+                        Object {
+                              "textDecoration": "none",
+                            }
+                  }
+                  to="/list"
+            >
+                  <MenuItem
+                        anchorOrigin={
+                              Object {
+                                    "horizontal": "right",
+                                    "vertical": "top",
+                                  }
+                        }
+                        checked={false}
+                        desktop={false}
+                        disabled={false}
+                        focusState="none"
+                        insetChildren={false}
+                        onTouchTap={[Function]}
+                        targetOrigin={
+                              Object {
+                                    "horizontal": "left",
+                                    "vertical": "top",
+                                  }
+                        }
+                  >
+                        List
+                  </MenuItem>
+            </Link>
+      </Drawer>
+</div>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 0,
+      "_context": Object {},
+      "_currentElement": <Nav />,
+      "_debugID": 1,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": Nav {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "handleClose": [Function],
+        "handleToggle": [Function],
+        "props": Object {},
+        "refs": Object {},
+        "state": Object {
+          "open": false,
+        },
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 1,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <div>
+          <AppBar
+                    onLeftIconButtonTouchTap={[Function]}
+                    showMenuIconButton={true}
+                    style={
+                              Object {
+                                        "textAlign": "center",
+                                      }
+                    }
+                    title="Password Manager"
+                    zDepth={1}
+          />
+          <Drawer
+                    disableSwipeToOpen={false}
+                    docked={false}
+                    onRequestChange={[Function]}
+                    open={false}
+                    openSecondary={false}
+                    swipeAreaWidth={30}
+                    width={200}
+                    zDepth={2}
+          >
+                    <Link
+                              replace={false}
+                              style={
+                                        Object {
+                                                  "textDecoration": "none",
+                                                }
+                              }
+                              to="/"
+                    >
+                              <MenuItem
+                                        anchorOrigin={
+                                                  Object {
+                                                            "horizontal": "right",
+                                                            "vertical": "top",
+                                                          }
+                                        }
+                                        checked={false}
+                                        desktop={false}
+                                        disabled={false}
+                                        focusState="none"
+                                        insetChildren={false}
+                                        onTouchTap={[Function]}
+                                        targetOrigin={
+                                                  Object {
+                                                            "horizontal": "left",
+                                                            "vertical": "top",
+                                                          }
+                                        }
+                              >
+                                        Home
+                              </MenuItem>
+                    </Link>
+                    <Link
+                              replace={false}
+                              style={
+                                        Object {
+                                                  "textDecoration": "none",
+                                                }
+                              }
+                              to="/list"
+                    >
+                              <MenuItem
+                                        anchorOrigin={
+                                                  Object {
+                                                            "horizontal": "right",
+                                                            "vertical": "top",
+                                                          }
+                                        }
+                                        checked={false}
+                                        desktop={false}
+                                        disabled={false}
+                                        focusState="none"
+                                        insetChildren={false}
+                                        onTouchTap={[Function]}
+                                        targetOrigin={
+                                                  Object {
+                                                            "horizontal": "left",
+                                                            "vertical": "top",
+                                                          }
+                                        }
+                              >
+                                        List
+                              </MenuItem>
+                    </Link>
+          </Drawer>
+</div>,
+        "_debugID": 2,
+        "_renderedOutput": <div>
+          <AppBar
+                    onLeftIconButtonTouchTap={[Function]}
+                    showMenuIconButton={true}
+                    style={
+                              Object {
+                                        "textAlign": "center",
+                                      }
+                    }
+                    title="Password Manager"
+                    zDepth={1}
+          />
+          <Drawer
+                    disableSwipeToOpen={false}
+                    docked={false}
+                    onRequestChange={[Function]}
+                    open={false}
+                    openSecondary={false}
+                    swipeAreaWidth={30}
+                    width={200}
+                    zDepth={2}
+          >
+                    <Link
+                              replace={false}
+                              style={
+                                        Object {
+                                                  "textDecoration": "none",
+                                                }
+                              }
+                              to="/"
+                    >
+                              <MenuItem
+                                        anchorOrigin={
+                                                  Object {
+                                                            "horizontal": "right",
+                                                            "vertical": "top",
+                                                          }
+                                        }
+                                        checked={false}
+                                        desktop={false}
+                                        disabled={false}
+                                        focusState="none"
+                                        insetChildren={false}
+                                        onTouchTap={[Function]}
+                                        targetOrigin={
+                                                  Object {
+                                                            "horizontal": "left",
+                                                            "vertical": "top",
+                                                          }
+                                        }
+                              >
+                                        Home
+                              </MenuItem>
+                    </Link>
+                    <Link
+                              replace={false}
+                              style={
+                                        Object {
+                                                  "textDecoration": "none",
+                                                }
+                              }
+                              to="/list"
+                    >
+                              <MenuItem
+                                        anchorOrigin={
+                                                  Object {
+                                                            "horizontal": "right",
+                                                            "vertical": "top",
+                                                          }
+                                        }
+                                        checked={false}
+                                        desktop={false}
+                                        disabled={false}
+                                        focusState="none"
+                                        insetChildren={false}
+                                        onTouchTap={[Function]}
+                                        targetOrigin={
+                                                  Object {
+                                                            "horizontal": "left",
+                                                            "vertical": "top",
+                                                          }
+                                        }
+                              >
+                                        List
+                              </MenuItem>
+                    </Link>
+          </Drawer>
+</div>,
+      },
+      "_renderedNodeType": 0,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <Nav />,
+}
+`;

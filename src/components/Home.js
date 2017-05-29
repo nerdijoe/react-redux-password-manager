@@ -28,7 +28,7 @@ const styles = {
 };
 
 
-class Home extends React.Component {
+export class Home extends React.Component {
 
   state = {
     slideIndex: 0,
