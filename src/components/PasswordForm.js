@@ -10,7 +10,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import Snackbar from 'material-ui/Snackbar';
 import Dialog from 'material-ui/Dialog';
 
-class PasswordForm extends React.Component {
+export class PasswordForm extends React.Component {
 
   constructor(props) {
     super(props)
@@ -77,7 +77,7 @@ class PasswordForm extends React.Component {
     e.preventDefault()
 
     console.log(`handleSubmit`, this.state)
-
+    console.log(e);
 
     //check validation, if all true then proceed
 
